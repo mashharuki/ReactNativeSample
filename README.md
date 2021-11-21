@@ -20,3 +20,6 @@ ReactNativeを学ぶためのリポジトリです。
     
 ### 環境診断コマンド
    `npx react-native doctor`
+   
+### 参考用のリポジトリ
+    https://github.com/mashharuki/praiser
