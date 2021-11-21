@@ -17,3 +17,6 @@ ReactNativeを学ぶためのリポジトリです。
     
    3. Run instructions for macOS:
     • See https://aka.ms/ReactNativeGuideMacOS for the latest up-to-date instructions.  
+    
+### 環境診断コマンド
+   `npx react-native doctor`
