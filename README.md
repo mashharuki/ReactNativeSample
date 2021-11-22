@@ -20,6 +20,14 @@ ReactNativeを学ぶためのリポジトリです。
     
 ### 環境診断コマンド
    `npx react-native doctor`
-   
+
+### React-Nativeの標準的なコンポーネント
+   1. Viewコンポーネント
+   2. Textコンポーネント
+   3. Imageコンポーネント
+   4. Scrollコンポーネント
+   5. FlatListコンポーネント
+   6. SectionListコンポーネント　
+
 ### 参考用のリポジトリ
     https://github.com/mashharuki/praiser
