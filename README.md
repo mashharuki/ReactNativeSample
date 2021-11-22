@@ -29,5 +29,9 @@ ReactNativeを学ぶためのリポジトリです。
    5. FlatListコンポーネント
    6. SectionListコンポーネント　
 
+### Jestを活用したユニットテストの方法
+    __test__フォルダ配下にある拡張子が、.js .ts .tsxのファイルもしくは、  
+    .test.js test.ts test.tsxのファイル。
+
 ### 参考用のリポジトリ
     https://github.com/mashharuki/praiser
