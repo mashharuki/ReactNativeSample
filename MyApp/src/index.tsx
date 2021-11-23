@@ -51,7 +51,9 @@ const Drawer = createDrawerNavigator();
  */
 function DrawerNavigator() {
   return (
-    <Drawer.Navigator>
+    <Drawer.Navigator screenOptions={() => ({
+      title: `${Date.now()}`,
+    })}>
       <Drawer.Screen name="Main" component={Main} />
       <Drawer.Screen name="Sub" component={Sub} />
     </Drawer.Navigator>
