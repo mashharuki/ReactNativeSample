@@ -4,18 +4,33 @@
 
 import React from "react";
 import { createStackNavigator, StackCardInterpolationProps } from "@react-navigation/stack";
-import { INITIAL, LOADING, HOME, CHOOSE_LOGIN } from "src/constants/path";
-import { Initial, Loading, Home, ChooseLogin } from "src/components/pages";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { INITIAL, LOADING, HOME, CHOOSE_LOGIN, STATISTICS } from "src/constants/path";
+import { Initial, Loading, Home, ChooseLogin, Statistics } from "src/components/pages";
 import * as UiContext from "../../contexts/ui";
 
-// Stack用の変数を生成
+// Stack用の変数を生成する。
 const Stack = createStackNavigator();
+// Tab用の変数を生成する。
+const Tab = createBottomTabNavigator();
 // アニメーション用の変数
 const forFade = ({ current }: StackCardInterpolationProps) => ({
   cardStyle: {
     opacity: current.progress,
   },
 });
+
+/**
+ * Tab用のルーティングコンポーネント
+ */
+function TabRoutes() {
+  return(
+    <Tab.Navigator initialRouteName={HOME}>
+      <Tab.Screen name={HOME} component={Home} />
+      <Tab.Screen name={STATISTICS} component={Statistics} />
+    </Tab.Navigator>
+  );
+}
 
 /**
  * ログイン状態かどうかを確認する関数
@@ -25,7 +40,7 @@ function switchingAuthStatus(status: UiContext.Status) {
     case UiContext.Status.UN_AUTHORIZED:
       return <Stack.Screen name={CHOOSE_LOGIN} component={ChooseLogin} />;
     case UiContext.Status.AUTHORIZED:
-      return <Stack.Screen name={HOME} component={Home} />;
+      return <Stack.Screen name={HOME} component={TabRoutes} />;
     case UiContext.Status.FIRST_OPEN:
     default:
       return <Stack.Screen name={INITIAL} component={Initial} />;
