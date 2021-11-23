@@ -5,16 +5,22 @@
 import React from "react";
 import { createStackNavigator, StackCardInterpolationProps } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { INITIAL, LOADING, HOME, CHOOSE_LOGIN, STATISTICS } from "../../constants/path";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import { INITIAL, LOADING, HOME, CHOOSE_LOGIN, STATISTICS, USER_INFO } from "../../constants/path";
 import { Initial, Loading, ChooseLogin} from "../../components/pages";
 import * as UiContext from "../../contexts/ui";
 import Statistics from "./Statistics";
 import Home from "./Home";
+import UserInfo from "./UserInfo";
 
 // Stack用の変数を生成する。
 const Stack = createStackNavigator();
 // Tab用の変数を生成する。
 const Tab = createBottomTabNavigator();
+// HomeDrawer用の変数を生成する。
+const HomeDrawer = createDrawerNavigator();
+// StatisticsDrawer用の変数を生成する。
+const StatisticsDrawer = createDrawerNavigator();
 // アニメーション用の変数
 const forFade = ({ current }: StackCardInterpolationProps) => ({
   cardStyle: {
@@ -23,13 +29,37 @@ const forFade = ({ current }: StackCardInterpolationProps) => ({
 });
 
 /**
+ * HomeWithDrawerコンポーネント
+ */
+function HomeWithDrawer() {
+  return (
+    <HomeDrawer.Navigator initialRouteName={HOME}>
+      <HomeDrawer.Screen name={HOME} component={Home} />
+      <HomeDrawer.Screen name={USER_INFO} component={UserInfo} />
+    </HomeDrawer.Navigator>
+  );
+}
+
+/**
+ * StatisticsWithDrawerコンポーネント
+ */
+function StatisticsWithDrawer() {
+  return (
+    <HomeDrawer.Navigator>
+      <HomeDrawer.Screen name={STATISTICS} component={Statistics} />
+      <HomeDrawer.Screen name={USER_INFO} component={UserInfo} />
+    </HomeDrawer.Navigator>
+  );
+}
+
+/**
  * Tab用のルーティングコンポーネント
  */
 function TabRoutes() {
   return(
     <Tab.Navigator initialRouteName={HOME}>
-      <Tab.Screen name={HOME} component={Home} />
-      <Tab.Screen name={STATISTICS} component={Statistics} />
+      <Tab.Screen name={HOME} component={HomeWithDrawer} />
+      <Tab.Screen name={STATISTICS} component={StatisticsWithDrawer} />
     </Tab.Navigator>
   );
 }
