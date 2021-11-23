@@ -3,19 +3,25 @@
  * @format
  */
 
-import { useNavigation, NavigationContainer } from "@react-navigation/native";
+import { useNavigation, NavigationContainer, DrawerActions } from "@react-navigation/native";
 import React from "react";
-import { View, Text, TouchableOpacity } from "react-native";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { View, Text,TouchableOpacity } from "react-native";
+import { createDrawerNavigator } from "@react-navigation/drawer";
 import styles from "./StyleSheet";
 
 /**
  * Main画面用のコンポーネント
  */
 function Main() {
+
+  const { dispatch } = useNavigation();
+
   return (
     <View style={styles.container}>
       <Text>Main</Text>
+      <TouchableOpacity onPress={() => dispatch(DrawerActions.openDrawer())}>
+        <Text>open drawer</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -24,25 +30,31 @@ function Main() {
  * Sub画面用のコンポーネント
  */
 function Sub() {
+
+  const { dispatch } = useNavigation();
+
   return (
     <View style={styles.container}>
       <Text>Sub</Text>
+      <TouchableOpacity onPress={() => dispatch(DrawerActions.openDrawer())}>
+        <Text>open drawer</Text>
+      </TouchableOpacity>
     </View>
   );
 }
 
-// createBottomTabNavigator型の変数を生成する。
-const Tab = createBottomTabNavigator();
+// createDrawerNavigator型の変数を用意する。
+const Drawer = createDrawerNavigator();
 
 /**
  * ルーティングを設定する関数
  */
-function TabNavigator() {
+function DrawerNavigator() {
   return (
-    <Tab.Navigator>
-      <Tab.Screen name="Main" component={Main} />
-      <Tab.Screen name="Sub" component={Sub} />
-    </Tab.Navigator>
+    <Drawer.Navigator>
+      <Drawer.Screen name="Main" component={Main} />
+      <Drawer.Screen name="Sub" component={Sub} />
+    </Drawer.Navigator>
   );
 }
 
@@ -52,7 +64,7 @@ function TabNavigator() {
 export default function() {
   return (
     <NavigationContainer>
-      <TabNavigator />
+      <DrawerNavigator />
     </NavigationContainer>
   );
 }
