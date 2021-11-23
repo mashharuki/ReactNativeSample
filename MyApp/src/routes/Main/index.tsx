@@ -5,9 +5,11 @@
 import React from "react";
 import { createStackNavigator, StackCardInterpolationProps } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { INITIAL, LOADING, HOME, CHOOSE_LOGIN, STATISTICS } from "src/constants/path";
-import { Initial, Loading, Home, ChooseLogin, Statistics } from "src/components/pages";
+import { INITIAL, LOADING, HOME, CHOOSE_LOGIN, STATISTICS } from "../../constants/path";
+import { Initial, Loading, ChooseLogin} from "../../components/pages";
 import * as UiContext from "../../contexts/ui";
+import Statistics from "./Statistics";
+import Home from "./Home";
 
 // Stack用の変数を生成する。
 const Stack = createStackNavigator();
