@@ -8,6 +8,8 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { INITIAL, LOADING, HOME, CHOOSE_LOGIN, STATISTICS, USER_INFO, INPUT, SIGN_IN, SIGN_UP } from "../../constants/path";
 import { Initial, Loading, ChooseLogin, Input, SignUp, SignIn } from "../../components/pages";
+import { headerTintColor } from "../Header";
+import styles from "../../../src/StyleSheet";
 import * as UiContext from "../../contexts/ui";
 import Statistics from "./Statistics";
 import Home from "./Home";
@@ -94,7 +96,7 @@ const getActiveRouteName = (state: any):string => {
  */
 function TabWithModalRoutes() {
   return(
-    <ModalStack.Navigator mode="modal" headerMode="none">
+    <ModalStack.Navigator mode="modal" headerMode="none" screenOptions={{ cardStyle: styles.cardStyle }}>
       <Stack.Screen name={HOME} component={Home} />
       <Stack.Screen name={INPUT} component={Input} />
     </ModalStack.Navigator>
@@ -106,10 +108,12 @@ function TabWithModalRoutes() {
  */
 function ChooseLoginNavigation() {
   return (
-    <ChooseLoginStack.Navigator initialRouteName={CHOOSE_LOGIN}>
-      <ChooseLoginStack.Screen name={CHOOSE_LOGIN} component={ChooseLogin} />
-      <ChooseLoginStack.Screen name={SIGN_IN} component={SignIn} />
-      <ChooseLoginStack.Screen name={SIGN_UP} component={SignUp} />
+    <ChooseLoginStack.Navigator
+      initialRouteName={CHOOSE_LOGIN}
+      screenOptions={{ headerStyle: styles.headerStyle, cardStyle: styles.cardStyle, headerTintColor }}>
+      <ChooseLoginStack.Screen name={CHOOSE_LOGIN} component={ChooseLogin} options={{ title: 'Choose login' }} />
+      <ChooseLoginStack.Screen name={SIGN_IN} component={SignIn} options={{ title: 'Sign in' }} />
+      <ChooseLoginStack.Screen name={SIGN_UP} component={SignUp} options={{ title: 'Sign up' }} />
     </ChooseLoginStack.Navigator>
   );
 }

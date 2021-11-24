@@ -14,6 +14,15 @@ const styles = StyleSheet.create({
   text: {
     color: COLOR.WHITE,
   },
+  headerStyle: {
+    backgroundColor: COLOR.MAIN,
+  },
+  headerTintColor: {
+    color: COLOR.PRIMARY,
+  },
+  cardStyle: {
+    backgroundColor: COLOR.MAIN
+  },
 });
 
 export default styles
