@@ -3,8 +3,25 @@
  */
 
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import styles from '../../../StyleSheet';
+import * as UiContext from "../../../contexts/ui";
+
+/**
+ * 状態変化ボタン
+ */
+function ChangeStateButton(props: { state: UiContext.Status }) {
+  const { setApplicationState } = React.useContext(UiContext.Context);
+  const { state } = props;
+
+  return (
+    <TouchableOpacity onPress={() => setApplicationState(state)}>
+      <Text style={styles.text}>
+        Change state to {state}
+      </Text>
+    </TouchableOpacity>
+  );
+}
 
 /**
 * Loadingコンポーネント
@@ -12,7 +29,9 @@ import styles from '../../../StyleSheet';
 function Loading() {
   return (
     <View style={styles.container}>
-      <Text>Loading</Text>
+      <ChangeStateButton state={UiContext.Status.AUTHORIZED} />
+      <ChangeStateButton state={UiContext.Status.UN_AUTHORIZED} />
+      <ChangeStateButton state={UiContext.Status.FIRST_OPEN} />
     </View>
   );
 }

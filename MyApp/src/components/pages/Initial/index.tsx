@@ -12,7 +12,9 @@ import styles from '../../../StyleSheet';
 function Initial() {
   return (
     <View style={styles.container}>
-      <Text>Initial</Text>
+      <Text style={styles.text}>
+        Initial
+      </Text>
     </View>
   );
 }
