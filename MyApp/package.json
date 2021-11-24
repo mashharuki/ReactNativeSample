@@ -17,6 +17,7 @@
     "@react-navigation/drawer": "^5.3.1",
     "@react-navigation/native": "^5.1.0",
     "@react-navigation/stack": "^5.2.1",
+    "@testing-library/react-native": "^5.0.3",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-jest": "^23.8.2",
     "eslint-plugin-prettier": "^3.1.2",
@@ -46,7 +47,7 @@
     "typescript": "^3.7.3"
   },
   "jest": {
-    "preset": "react-native",
+    "preset": "@testing-library/react-native",
     "moduleFileExtensions": [
       "ts",
       "tsx",
