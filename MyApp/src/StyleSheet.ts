@@ -23,6 +23,9 @@ const styles = StyleSheet.create({
   cardStyle: {
     backgroundColor: COLOR.MAIN
   },
+  drawerStyle: {
+    backgroundColor: COLOR.MAIN
+  },
 });
 
 export default styles

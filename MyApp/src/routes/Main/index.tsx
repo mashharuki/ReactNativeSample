@@ -9,6 +9,7 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import { INITIAL, LOADING, HOME, CHOOSE_LOGIN, STATISTICS, USER_INFO, INPUT, SIGN_IN, SIGN_UP } from "../../constants/path";
 import { Initial, Loading, ChooseLogin, Input, SignUp, SignIn } from "../../components/pages";
 import { headerTintColor } from "../Header";
+import { COLOR } from "../../constants/theme";
 import styles from "../../../src/StyleSheet";
 import * as UiContext from "../../contexts/ui";
 import Statistics from "./Statistics";
@@ -33,13 +34,29 @@ const forFade = ({ current }: StackCardInterpolationProps) => ({
     opacity: current.progress,
   },
 });
+// Drawer用のカラーテーマ用の変数
+const drawerContentOptions = {
+  activeTintColor: COLOR.PRIMARY,
+  inactiveTintColor: COLOR.WHITE,
+};
+// TabNavigatoer用の変数
+const tabBarOptions = {
+  activeTintColor: COLOR.PRIMARY,
+  inactiveTintColor: COLOR.WHITE,
+  style: {
+    backgroundColor: COLOR.MAIN,
+  },
+};
 
 /**
  * HomeWithDrawerコンポーネント
  */
 function HomeWithDrawer() {
   return (
-    <HomeDrawer.Navigator initialRouteName={HOME}>
+    <HomeDrawer.Navigator
+      initialRouteName={HOME}
+      drawerStyle={styles.drawerStyle}
+      drawerContentOptions={drawerContentOptions}>
       <HomeDrawer.Screen name={HOME} component={Home} />
       <HomeDrawer.Screen name={USER_INFO} component={UserInfo} />
     </HomeDrawer.Navigator>
@@ -51,7 +68,10 @@ function HomeWithDrawer() {
  */
 function StatisticsWithDrawer() {
   return (
-    <HomeDrawer.Navigator>
+    <HomeDrawer.Navigator
+    initialRouteName={STATISTICS}
+      drawerStyle={styles.drawerStyle}
+      drawerContentOptions={drawerContentOptions}>
       <HomeDrawer.Screen name={STATISTICS} component={Statistics} />
       <HomeDrawer.Screen name={USER_INFO} component={UserInfo} />
     </HomeDrawer.Navigator>
@@ -65,6 +85,7 @@ function TabRoutes() {
   return(
     <Tab.Navigator
       initialRouteName={HOME}
+      tabBarOptions={tabBarOptions}
       screenOptions={(props: any) =>  {
         const routeName = getActiveRouteName(props.route.state);
         return { tabBarVisible: routeName !== USER_INFO, };
