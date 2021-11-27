@@ -82,6 +82,45 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'flex-start',
   },
+  pagination: {
+    backgroundColor: COLOR.CAROUSEL_BACKGROUND,
+  },
+  dot: {
+    width: 10,
+    height: 10,
+    borderRadius: 5,
+    marginHorizontal: 8,
+    backgroundColor: COLOR.WHITE
+  },
+  carouselItemContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+    backgroundColor: COLOR.MAIN,
+  },
+  carouselItemText: {
+    fontSize: 28,
+    fontWeight: '800',
+    lineHeight: 40,
+    color: COLOR.WHITE,
+  },
+  carouselItemTextContainer: {
+    flex: 1,
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    width: width - 40,
+    paddingVertical: 10,
+  },
+  carouselItemImageContainer: {
+    flex: 2,
+  },
+  carouselItemContentContainer: {
+    flex: 3,
+    paddingTop: 30,
+    justifyContent: 'space-between',
+    paddingBottom: 20,
+  }
 });
 
 export default styles
