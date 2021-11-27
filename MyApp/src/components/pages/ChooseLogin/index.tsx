@@ -7,6 +7,7 @@ import { View, Text, TouchableOpacity } from 'react-native';
 import styles from '../../../StyleSheet';
 import { useNavigation } from '@react-navigation/core';
 import { SIGN_IN, SIGN_UP } from "../../../constants/path";
+import { Button, Logo } from '../../atoms';
 
 /**
  * ChooseLoginコンポーネント
@@ -17,13 +18,13 @@ function ChooseLogin() {
 
   return (
     <View style={styles.container}>
-      <Text>ChooseLogin</Text>
-      <TouchableOpacity onPress={() => navigate(SIGN_IN)}>
-        <Text>go to sign in</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigate(SIGN_UP)}>
-        <Text>go to sign up</Text>
-      </TouchableOpacity>
+      <View style={styles.imageContainer}>
+        <Logo/>
+      </View>
+      <View style={styles.contentContainer}>
+        <Button onPress={() =>  navigate(SIGN_IN)} style={styles.button} label="Sign In"/>
+        <Button onPress={() =>  navigate(SIGN_UP)} style={styles.button} label="Sign Up"/>
+      </View>
     </View>
   );
 }

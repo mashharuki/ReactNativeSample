@@ -37,6 +37,22 @@ const styles = StyleSheet.create({
     flex: 1,
     resizeMode: 'contain',
   },
+  button: {
+    marginBottom: 40,
+    width: 300,
+  },
+  contentContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingBottom: 40,
+    paddingVertical: 20,
+  },
+  imageContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });
 
 export default styles
