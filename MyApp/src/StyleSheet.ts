@@ -120,7 +120,14 @@ const styles = StyleSheet.create({
     paddingTop: 30,
     justifyContent: 'space-between',
     paddingBottom: 20,
-  }
+  },
+  initialContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+    backgroundColor: COLOR.MAIN,
+  },
 });
 
 export default styles
