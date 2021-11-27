@@ -168,6 +168,14 @@ const styles = StyleSheet.create({
   deleteButton: {
     backgroundColor: COLOR.CAUTION,
   },
+  todoModuleContainer: {
+    backgroundColor: COLOR.MAIN,
+    height: 120,
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
 });
 
 export default styles

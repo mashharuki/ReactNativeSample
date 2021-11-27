@@ -9,7 +9,7 @@ import { IconButton } from "src/components/atoms";
 /**
  * 削除処理用のインターフェース
  */
- interface RemoveTodo {
+export interface RemoveTodo {
   (id: string): void;
 };
 
@@ -28,7 +28,7 @@ interface Props {
 /**
  * Componentコンポーネント
  */
-function Component(props: Props) {
+export function Component(props: Props) {
   // 引数から値を取得する。
   const {
     state: { id },
@@ -44,5 +44,3 @@ function Component(props: Props) {
 
   return <IconButton onPress={onPress} icon="delete" style={styles.deleteButton} />;
 }
-
-export default  Component;

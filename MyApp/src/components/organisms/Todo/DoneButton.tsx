@@ -9,7 +9,7 @@ import { IconButton } from "src/components/atoms";
 /**
  * トグル用のインターフェース
  */
-interface ToggleTodo {
+export interface ToggleTodo {
   (id: string): void;
 };
 
@@ -30,7 +30,7 @@ interface Props {
 /**
  * Componentコンポーネント
  */
-function Component(props: Props) {
+export function Component(props: Props) {
   // 引数から値を取得する。
   const {
     state: { id, isDone },
@@ -54,4 +54,3 @@ function Component(props: Props) {
    );
 }
 
-export default Component;
