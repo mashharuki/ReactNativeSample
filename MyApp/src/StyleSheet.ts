@@ -4,6 +4,7 @@
 
 import { StyleSheet } from "react-native";
 import { COLOR } from '../src/constants/theme';
+import { width } from "./lib/window";
 
 const styles = StyleSheet.create({
   container: {
@@ -25,6 +26,16 @@ const styles = StyleSheet.create({
   },
   drawerStyle: {
     backgroundColor: COLOR.MAIN
+  },
+  buttonText: {
+    fontSize: 18,
+    fontWeight: '900',
+    color: COLOR.WHITE,
+  },
+  image: {
+    width: width * 2 / 3,
+    flex: 1,
+    resizeMode: 'contain',
   },
 });
 
