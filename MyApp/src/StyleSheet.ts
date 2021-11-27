@@ -53,6 +53,16 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  signUpContainer: {
+    flex: 1,
+    padding: 16,
+  },
+  signUpText: {
+    marginVertical: 20,
+  },
+  signUpButton: {
+    marginTop: 20,
+  },
 });
 
 export default styles
