@@ -63,6 +63,25 @@ const styles = StyleSheet.create({
   signUpButton: {
     marginTop: 20,
   },
+  signInContainer: {
+    flex: 1,
+    padding: 16,
+    justifyContent: 'center',
+  },
+  signInText: {
+    marginVertical: 20,
+  },
+  signInButton: {
+    marginTop: 50,
+  },
+  signInTextContainer: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  signInButtonContainer: {
+    flex: 1,
+    justifyContent: 'flex-start',
+  },
 });
 
 export default styles
