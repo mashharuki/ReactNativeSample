@@ -176,6 +176,13 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
   },
+  todoOrgContainer: {
+    alignSelf: 'stretch',
+  },
+  todoOrgSeparator: {
+    height: 1,
+    backgroundColor: COLOR.SECONDARY,
+  }
 });
 
 export default styles
