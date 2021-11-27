@@ -6,6 +6,9 @@ import { StyleSheet } from "react-native";
 import { COLOR } from '../src/constants/theme';
 import { width } from "./lib/window";
 
+/**
+ * スタイル用のコンポーネント
+ */
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -127,6 +130,43 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 20,
     backgroundColor: COLOR.MAIN,
+  },
+  iconButton: {
+    height: 120,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: 80,
+    borderRadius: 0,
+    margin: 0,
+  },
+  todoContentContainer: {
+    backgroundColor: COLOR.MAIN,
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: 20,
+  },
+  todoTitle: {
+    fontWeight: 'bold',
+    fontSize: 32,
+    color: COLOR.WHITE,
+  },
+  todoDoneText: {
+    textDecorationLine: 'line-through',
+  },
+  todoDetail: {
+    fontSize: 16,
+    color: COLOR.WHITE,
+  },
+  doneButton: {
+    backgroundColor: COLOR.PRIMARY,
+  },
+  done: {
+    backgroundColor: COLOR.MAIN_DARK,
+  },
+  deleteButton: {
+    backgroundColor: COLOR.CAUTION,
   },
 });
 
