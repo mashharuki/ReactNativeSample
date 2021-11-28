@@ -201,6 +201,26 @@ const styles = StyleSheet.create({
     shadowRadius: 4.65,
     elevation: 7,
   },
+  indexContainer: {
+    flex: 1,
+    padding: 16,
+    justifyContent: 'center',
+    backgroundColor: COLOR.MAIN,
+  },
+  indexText: {
+    marginBottom: 16,
+  },
+  indexButton: {
+    marginTop: 20,
+  },
+  indexIconButton: {
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    width: 80,
+    height: 80,
+    borderRadius: 40,
+  },
 });
 
 export default styles
