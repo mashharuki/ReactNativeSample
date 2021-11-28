@@ -221,6 +221,13 @@ const styles = StyleSheet.create({
     height: 80,
     borderRadius: 40,
   },
+  detailContainer: {
+    flex: 1,
+    padding: 10,
+  },
+  detailTextFeild: {
+    marginVertical: 10,
+  },
 });
 
 export default styles
