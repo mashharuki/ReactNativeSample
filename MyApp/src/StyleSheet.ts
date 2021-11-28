@@ -228,6 +228,79 @@ const styles = StyleSheet.create({
   detailTextFeild: {
     marginVertical: 10,
   },
+  labelContainerRow: {
+    alignItems: 'stretch',
+    paddingHorizontal: 50,
+    flexDirection: 'row',
+    marginBottom: 10,
+  },
+  labelContainer: {
+    minWidth: 100,
+  },
+  labelText: {
+    color: COLOR.WHITE,
+    fontSize: 18,
+  },
+  valueContainer: {
+    flexShrink: 1,
+    paddingLeft: 10,
+  },
+  valueText: {
+    color: COLOR.WHITE,
+    fontSize: 16,
+  },
+  userInfoContainer: {
+    flex: 1,
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+  },
+  imageIconContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 20,
+    marginBottom: 40,
+  },
+  nameText: {
+    color: COLOR.WHITE,
+    fontSize: 20,
+    marginTop: 5,
+  },
+  userInfoButton: {
+    marginTop: 30,
+  },
+  headerText: {
+    color: COLOR.WHITE,
+    fontSize: 24,
+  },
+  progress: {
+    height: 200,
+    width: 200,
+  },
+  ratioArea: {
+    paddingTop: 20,
+  },
+  graphContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
+  headerTextContainer: {
+    paddingLeft: 20,
+    marginBottom: 8,
+  },
+  progressPanelText: {
+    color: COLOR.WHITE,
+    fontSize: 20,
+    marginVertical: 3,
+  },
+  numberText: {
+    marginLeft: 8,
+  },
+  progressPanelTextContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginLeft: 20,
+    flexDirection: 'row',
+  },
 });
 
 export default styles
