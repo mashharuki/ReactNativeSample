@@ -39,5 +39,20 @@ ReactNativeを学ぶためのリポジトリです。
     __test__フォルダ配下にある拡張子が、.js .ts .tsxのファイルもしくは、  
     .test.js test.ts test.tsxのファイル。
 
+
+### Reduxとは
+　　 ReactJSが扱うUIのstate(状態)を管理をするためのフレームワークのこと。  
+    以下、簡単に機能の役割を記載します。  
+    
+   1. Actions
+      actionは、アプリケーションからのデータをstoreに送るためのもの
+   2. Reducers
+      reducerは、actionを受けてstateを変更するためのメソッド
+   3. Stores
+      stateを保持するためのもの
+
 ### 参考用のリポジトリ
-    https://github.com/mashharuki/praiser
+   <a href="https://github.com/mashharuki/praiser">こちら</a>
+
+### Reduxの公式ドキュメント
+   <a href="https://github.com/reduxjs/redux">こちら</a>

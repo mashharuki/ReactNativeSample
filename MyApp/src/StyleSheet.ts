@@ -182,7 +182,25 @@ const styles = StyleSheet.create({
   todoOrgSeparator: {
     height: 1,
     backgroundColor: COLOR.SECONDARY,
-  }
+  },
+  homeButton: {
+    position: 'absolute',
+    bottom: 32,
+    right: 32,
+    width: 48,
+    height: 48,
+    backgroundColor: COLOR.MAIN_DARK,
+    borderRadius: 24,
+    justifyContent: 'center',
+    alignItems: 'center',
+    shadowOffset: {
+      width: 3,
+      height: 3,
+    },
+    shadowOpacity: 0.29,
+    shadowRadius: 4.65,
+    elevation: 7,
+  },
 });
 
 export default styles
