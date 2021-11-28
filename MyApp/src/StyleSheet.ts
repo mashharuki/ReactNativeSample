@@ -301,6 +301,11 @@ const styles = StyleSheet.create({
     marginLeft: 20,
     flexDirection: 'row',
   },
+  statisticsTextContainer: {
+    paddingLeft: 20,
+    marginTop: 20,
+    marginBottom: 8,
+  },
 });
 
 export default styles
